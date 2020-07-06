@@ -18,7 +18,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             <?php foreach ($product_shuffle as $item) { ?>
                 <div class="item py-2 bg-light">
                     <div class="product font-rale">
-                        <a href="<?php printf('%s?item_id=%s', 'product.php',  $item['item_id']); ?>"><img src="<?php echo $item['item_image'] ?? "./assets/products/1.png"; ?>" alt="product1" class="img-fluid"></a>
+                        <a href="<?php printf('%s?item_id=%s', 'product.php',  $item['item_id']); ?>">
+                            <img src="<?php echo $item['item_image'] ?? "./assets/products/1.png"; ?>" alt="product1" class="img-fluid">
+                        </a>
                         <div class="text-center">
                             <h6><?php echo  $item['item_name'] ?? "Unknown";  ?></h6>
                             <div class="rating text-warning font-size-12">
@@ -38,7 +40,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                                 if (in_array($item['item_id'], $Cart->getCartId($product->getData('cart')) ?? [])){
                                     echo '<button type="submit" disabled class="btn btn-success font-size-12">In the Cart</button>';
                                 }else{
-                                    echo '<button type="submit" name="top_sale_submit" class="btn btn-warning font-size-12">Add to Cart</button>';
+                                    echo '<button type="submit" name="new_phones_submit" class="btn btn-warning font-size-12">Add to Cart</button>';
                                 }
                                 ?>
                             </form>
