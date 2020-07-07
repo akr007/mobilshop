@@ -70,7 +70,7 @@ class Cart
         }
     }
 
-    // get item_it of shopping cart list
+    // get item_id of shopping cart list
     public function getCartId($cartArray = null, $key = "item_id"){
         if ($cartArray != null){
             $cart_id = array_map(function ($value) use($key){
@@ -90,7 +90,7 @@ class Cart
             $result = $this->db->con->multi_query($query);
 
             if($result){
-                header("Location :" . $_SERVER['PHP_SELF']);
+                header("Location:" . $_SERVER['PHP_SELF']);
             }
             return $result;
         }

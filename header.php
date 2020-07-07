@@ -23,12 +23,12 @@
             <p class="font-rale font-size-12 text-black-50 m-0">Antal Krisztián</p>
             <div class="font-rale font-size-14">
                 <a href="#" class="px-3 border-right border-left text-dark">Login</a>
-                <a href="#" class="px-3 border-right text-dark">Wishlist(0)</a>
+                <a href="#" class="px-3 border-right text-dark">Wishlist(<?php echo count($product->getData('wishlist')); ?>)</a>
             </div>
         </div>
 
         <nav class="navbar navbar-expand-lg navbar-dark color-second-bg">
-            <a class="navbar-brand" href="#">Mobile Shop</a>
+            <a class="navbar-brand" href="index.php">Mobile Shop</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -41,7 +41,7 @@
                   <a class="nav-link" href="#">Category</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Products <i class="fas fa-chevron-down"></i></a>
+                  <a class="nav-link" href="">Products <i class="fas fa-chevron-down"></i></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Blog</a>
@@ -54,11 +54,11 @@
                 </li>
               </ul>
               <form action="#" class="font-size-14 font-rale">
-                  <a href="#" class="py-2 rounded-pill color-primary-bg">
+                  <a href="cart.php" class="py-2 rounded-pill color-primary-bg">
                     <span class="font-size-16 px-2 text-white">
                         <i class="fas fa-shopping-cart"></i>
                     </span>
-                    <span class="px-3 py-2 rounded-pill text-dark bg-light">0</span>
+                    <span class="px-3 py-2 rounded-pill text-dark bg-light"><?php echo count($product->getData('cart')); ?></span>
                   </a>
               </form>
             </div>
